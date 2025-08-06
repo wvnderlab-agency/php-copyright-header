@@ -26,5 +26,10 @@
     "friendsofphp/php-cs-fixer": "^3.80",
     "phpunit/phpunit": "^10.0.0",
     "phpstan/phpstan": "^2.0"
+  },
+  "scripts": {
+    "analyse": "./vendor/bin/phpstan analyse",
+    "csfix": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php.dist",
+    "test": "./vendor/bin/phpunit --testdox"
   }
 }
