@@ -1,0 +1,24 @@
+<?php
+
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+use WvnderlabAgency\CopyrightHeader\CopyrightHeaderFixer;
+
+if (!class_exists(CopyrightHeaderFixer::class)) {
+    require_once __DIR__ . '/src/CopyrightHeaderFixer.php';
+}
+
+$finder = Finder::create()
+    ->in(__DIR__ . '/src')
+    ->name('*.php')
+    ->exclude(['vendor']);
+
+return (new Config())
+    ->setRules([
+        '@PSR12' => true,
+        'WvnderlabAgency/copyright_header' => true,
+    ])
+    ->setFinder($finder)
+    ->registerCustomFixers([
+        'WvnderlabAgency/copyright_header' => new CopyrightHeaderFixer()
+    ]);
