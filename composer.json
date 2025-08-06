@@ -1,0 +1,30 @@
+{
+  "name": "wvnderlab-agency/copyright-header",
+  "description": "A custom fixer to provide copyright headers in each file via PHP-CS-Fixer and Laravel Pint",
+  "keywords": [ "copyright", "php", "code style", "php-cs-fixer", "laravel", "pint" ],
+  "authors": [
+    {
+      "name": "johninamillion",
+      "email": "john@wvnderlab.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "WvnderlabAgency\\CopyrightHeader\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WvnderlabAgency\\CopyrightHeader\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^8.2"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.80",
+    "phpunit/phpunit": "^10.0.0",
+    "phpstan/phpstan": "^2.0"
+  }
+}
