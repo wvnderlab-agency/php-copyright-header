@@ -3,6 +3,11 @@
 return
 <<<COPYRIGHT
 /**
- * (c) copyright {$year} Wvnderlab Agency.
+ *  ################ 
+ *  ##            ##     Copyright (c) {$year} Wvnderlab Agency
+ *  ##                   
+ *  ##   ##  ###  ##     ✉️ moin@wvnderlab.com
+ *  ##    #### ####      🔗 https://wvnderlab.com
+ *  #####  ##  ###   
  */
 COPYRIGHT;
