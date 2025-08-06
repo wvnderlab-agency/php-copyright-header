@@ -1,6 +1,7 @@
 # Misc
 .DS_Store
 .idea
+/tmp
 
 # Composer
 /vendor
