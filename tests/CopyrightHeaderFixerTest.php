@@ -131,5 +131,6 @@ class CopyrightHeaderFixerTest extends TestCase
         $output = $tokens->generateCode();
 
         $this->assertStringContainsString($copyright, $output);
+        $this->assertStringNotContainsString($outdatedCopyright, $output);
     }
 }
