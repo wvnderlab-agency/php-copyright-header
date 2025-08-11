@@ -1,12 +1,12 @@
 <?php
 
 /**
- *  ################ 
- *  ##            ##     Copyright (c) 2025 Wvnderlab Agency
- *  ##                   
- *  ##   ##  ###  ##     ✉️ moin@wvnderlab.com
- *  ##    #### ####      🔗 https://wvnderlab.com
- *  #####  ##  ###   
+ *  ################    
+ *  ##            ##    Copyright (c) 2025 Wvnderlab Agency
+ *  ##                  
+ *  ##   ##  ###  ##    ✉️ moin@wvnderlab.com
+ *  ##    #### ####     🔗 https://wvnderlab.com
+ *  #####  ##  ###      
  */
 
 namespace WvnderlabAgency\CopyrightHeader;
@@ -108,11 +108,10 @@ final class CopyrightHeaderFixer extends AbstractFixer
         if ($currentIndex === null) {
             $this->insertCopyrightHeader($tokens, $newIndex);
         } else {
-            $currentCopyright = $tokens[$currentIndex]->getContent();
-            $sameContent = $currentCopyright === $copyright;
+            $sameContent = $tokens[$currentIndex]->getContent() === $copyright;
 
             if (!$sameContent) {
-                $this->removeCopyrightHeader($tokens, $newIndex);
+                $this->removeCopyrightHeader($tokens, $currentIndex);
                 $this->insertCopyrightHeader($tokens, $newIndex);
             }
         }
@@ -130,7 +129,7 @@ final class CopyrightHeaderFixer extends AbstractFixer
         $copyright = $this->getCopyright();
         $index = $tokens->getNextNonWhitespace($headerNewIndex);
 
-        if ($index === null || !$tokens[$index]->isComment()) {
+        if ($index === null || !$tokens[$index]->isGivenKind(T_DOC_COMMENT)) {
 
             return null;
         }
