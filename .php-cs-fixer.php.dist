@@ -5,7 +5,7 @@ use PhpCsFixer\Finder;
 use WvnderlabAgency\CopyrightHeader\CopyrightHeaderFixer;
 
 if (!class_exists(CopyrightHeaderFixer::class)) {
-    require_once __DIR__ . '/src/CopyrightHeaderFixer.php';
+    require_once __DIR__ . '/vendor/autoload.php';
 }
 
 $finder = Finder::create()
