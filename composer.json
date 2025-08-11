@@ -29,7 +29,7 @@
     "phpstan/phpstan": "^2.0"
   },
   "scripts": {
-    "analyse": "./vendor/bin/phpstan analyse",
+    "analyze": "./vendor/bin/phpstan analyse",
     "csfix": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php.dist",
     "test": "./vendor/bin/phpunit --testdox"
   }
