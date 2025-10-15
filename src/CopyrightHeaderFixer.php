@@ -1,12 +1,12 @@
 <?php
 
 /**
- *  ################    
+ *  ################
  *  ##            ##    Copyright (c) 2025 Wvnderlab Agency
- *  ##                  
+ *  ##
  *  ##   ##  ###  ##    ✉️ moin@wvnderlab.com
  *  ##    #### ####     🔗 https://wvnderlab.com
- *  #####  ##  ###      
+ *  #####  ##  ###
  */
 
 namespace WvnderlabAgency\CopyrightHeader;
@@ -18,6 +18,12 @@ use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 use SplFileInfo;
 
+/**
+ * Copyright Header Fixer.
+ *
+ * @package wvnderlab-agency/php-copyright-header
+ * @since 0.1.0
+ */
 final class CopyrightHeaderFixer extends AbstractFixer
 {
     /**
@@ -279,8 +285,8 @@ final class CopyrightHeaderFixer extends AbstractFixer
 
         $regex = '/\h$/';
 
-        if ($tokens[$prev]->isGivenKind(\T_OPEN_TAG) && Preg::match($regex, $tokens[$prev]->getContent())) {
-            $tokens[$prev] = new Token([\T_OPEN_TAG, Preg::replace($regex, $lineEnding, $tokens[$prev]->getContent())]);
+        if ($prev !== null && $tokens[$prev]->isGivenKind(T_OPEN_TAG) && Preg::match($regex, $tokens[$prev]->getContent())) {
+            $tokens[$prev] = new Token([T_OPEN_TAG, Preg::replace($regex, $lineEnding, $tokens[$prev]->getContent())]);
         }
 
         $lineBreakCount = $this->getLineBreakCount($tokens, $index, -1);
@@ -302,7 +308,10 @@ final class CopyrightHeaderFixer extends AbstractFixer
             'year' => date('Y'),
         ]);
 
-        return include __DIR__ . '/../copyright.php';
+        /** @var non-empty-string $copyright */
+        $copyright = include __DIR__ . '/../copyright.php';
+
+        return $copyright;
     }
 
     /**

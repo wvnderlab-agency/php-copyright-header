@@ -18,7 +18,10 @@ class CopyrightHeaderFixerTest extends TestCase
         $method = $reflection->getMethod('getCopyright');
         $method->setAccessible(true);
 
-        return $method->invoke($fixer);
+        /** @var non-empty-string $copyright */
+        $copyright = $method->invoke($fixer);
+
+        return $copyright;
     }
 
     #[Test]
