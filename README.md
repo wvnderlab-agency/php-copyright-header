@@ -1,4 +1,4 @@
-# Wvnderlab - Copyright-Header
+# PHP Copyright-Header
 
 ```php
 /**
@@ -30,7 +30,7 @@
 You can install the package via Composer by running the following command:
 
 ```shell
-composer require --dev wvnderlab-agency/copyright-header
+composer require --dev wvnderlab-agency/php-copyright-header
 ```
 
 #### manually
@@ -42,11 +42,11 @@ If you prefer to install the package manually, you can add the following lines t
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/wvnderlab-agency/copyright-header"
+      "url": "https://github.com/wvnderlab-agency/php-copyright-header"
     }
   ],
   "require-dev": {
-    "wvnderlab-agency/copyright-header": "^0.1.0"
+    "wvnderlab-agency/php-copyright-header": "^0.1.0"
   }
 }
 ```
@@ -54,7 +54,7 @@ If you prefer to install the package manually, you can add the following lines t
 If you want to update the package to the latest version, run the following command:
 
 ```shell
-composer update wvnderlab-agency/copyright-header
+composer update wvnderlab-agency/php-copyright-header
 ```
 
 ### Configuration
@@ -96,7 +96,7 @@ Add a script to your `composer.json` file to run the PHP CS Fixer with the confi
 ```json
 {
   "scripts": {
-    "csfix": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php"
+    "format": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php"
   }
 }
 ```
@@ -104,7 +104,7 @@ Add a script to your `composer.json` file to run the PHP CS Fixer with the confi
 Now you can run the following command to apply the code styles defined in the project:
 
 ```shell
-composer csfix
+composer format
 ```
 
 ## Development
@@ -129,7 +129,7 @@ composer install
 Run the following command to apply the code styles defined in the project:
 
 ```shell
-composer csfix
+composer format
 ```
 
 ### Analyze Code
