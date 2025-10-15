@@ -1,5 +1,5 @@
 {
-  "name": "wvnderlab-agency/copyright-header",
+  "name": "wvnderlab-agency/php-copyright-header",
   "description": "A custom fixer to provide copyright headers in each file via PHP-CS-Fixer",
   "keywords": [ "copyright", "php", "code style", "php-cs-fixer" ],
   "license": "MIT",
@@ -30,7 +30,7 @@
   },
   "scripts": {
     "analyze": "./vendor/bin/phpstan analyse",
-    "csfix": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php.dist",
+    "format": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php.dist",
     "test": "./vendor/bin/phpunit --testdox"
   }
 }
